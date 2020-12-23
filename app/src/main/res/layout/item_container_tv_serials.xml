@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="tvSerials"
+            type="com.example.app_1.models.TvSerials" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_4sdp">
+
+        <!--Space between two elements-->
+
+        <View
+            android:id="@+id/viewSupporter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageTvSerial" />
+
+        <View
+            android:id="@+id/viewBackground"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/item_rv_bg"
+            android:paddingBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textNameSerial"
+            />
+
+
+        <!--Loading image-->
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imageTvSerial"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginStart="16dp"
+            android:scaleType="centerCrop"
+            android:imageURL="@{tvSerials.thumbnail}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="@dimen/_4sdp" />
+
+        <TextView
+            android:id="@+id/textNameSerial"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:includeFontPadding="false"
+            android:text="@{tvSerials.name}"
+            android:paddingTop="@dimen/_8sdp"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageTvSerial"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textNetwork"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/_12ssp"
+            android:text='@{tvSerials.network + " (" + tvSerials.country +")"}'
+            app:layout_constraintEnd_toEndOf="@+id/textNameSerial"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textNameSerial"
+            app:layout_constraintTop_toBottomOf="@+id/textNameSerial" />
+
+        <TextView
+            android:id="@+id/textStarted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:fontFamily="@font/roboto_regular"
+            android:includeFontPadding="false"
+            android:text='@{"Started on " + tvSerials.startDate}'
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="@+id/textNetwork"
+            app:layout_constraintStart_toStartOf="@+id/textNetwork"
+            app:layout_constraintTop_toBottomOf="@+id/textNetwork" />
+
+        <TextView
+            android:id="@+id/textStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:includeFontPadding="false"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:textColor="@color/colorTextOther"
+            android:textSize="@dimen/_12ssp"
+            android:text="@{tvSerials.status}"
+            app:layout_constraintEnd_toEndOf="@+id/textStarted"
+            app:layout_constraintStart_toStartOf="@+id/textStarted"
+            app:layout_constraintTop_toBottomOf="@+id/textStarted" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
