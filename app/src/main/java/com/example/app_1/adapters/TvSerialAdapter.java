@@ -10,21 +10,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app_1.R;
 import com.example.app_1.databinding.ItemContainerTvSerialsBinding;
+import com.example.app_1.listeners.TvSerialsListener;
 import com.example.app_1.models.TvSerials;
 
 import java.util.List;
 
 public class TvSerialAdapter extends RecyclerView.Adapter<TvSerialAdapter.TvSerialViewHolder> {
 
-    List<TvSerials> tvSerialsList;
-    Context context;
+    private List<TvSerials> tvSerialsList;
+    private Context context;
+    private TvSerialsListener tvSerialsListener;
 
     private LayoutInflater layoutInflater;
 
-    public TvSerialAdapter(Context context, List<TvSerials> tvSerialsList) {
+    public TvSerialAdapter(Context context, List<TvSerials> tvSerialsList, TvSerialsListener tvSerialsListener) {
+        this.tvSerialsListener = tvSerialsListener;
         this.context = context;
         this.tvSerialsList = tvSerialsList;
     }
+
+
 
     @NonNull
     @Override
@@ -48,7 +53,7 @@ public class TvSerialAdapter extends RecyclerView.Adapter<TvSerialAdapter.TvSeri
         return tvSerialsList.size();
     }
 
-    static class TvSerialViewHolder extends RecyclerView.ViewHolder {
+    class TvSerialViewHolder extends RecyclerView.ViewHolder {
 
         private ItemContainerTvSerialsBinding itemContainerTvSerialsBinding;
 
@@ -60,6 +65,7 @@ public class TvSerialAdapter extends RecyclerView.Adapter<TvSerialAdapter.TvSeri
         public void bindTvSerials(TvSerials tvSerials) {
             itemContainerTvSerialsBinding.setTvSerials(tvSerials);
             itemContainerTvSerialsBinding.executePendingBindings();
+            itemContainerTvSerialsBinding.getRoot().setOnClickListener(v -> tvSerialsListener.onTvSerialClicked(tvSerials));
         }
     }
 }

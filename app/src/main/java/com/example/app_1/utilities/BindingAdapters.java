@@ -15,7 +15,7 @@ public class BindingAdapters {
             Picasso.get().load(Url).noFade().into(imageView, new Callback() {
                 @Override
                 public void onSuccess() {
-                    imageView.animate().setDuration(300).alpha(1f).start();
+                    imageView.animate().setDuration(100).alpha(1f).start();
                 }
 
                 @Override
