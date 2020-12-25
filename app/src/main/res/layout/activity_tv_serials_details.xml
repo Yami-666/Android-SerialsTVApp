@@ -16,8 +16,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         tools:context=".activities.TvSerialsDetailsActivity">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/sliderViewPage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" 
+            android:visibility="gone"/>
+    
+        <View
+            android:id="@+id/viewFadingEdge"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/background_fading_edge"
+            app:layout_constraintBottom_toBottomOf="@+id/sliderViewPage"
+            />
+
+        <LinearLayout
+            android:id="@+id/layoutIndicators"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="8sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sliderViewPage" />
 
         <ProgressBar
             android:layout_width="@dimen/_25sdp"
