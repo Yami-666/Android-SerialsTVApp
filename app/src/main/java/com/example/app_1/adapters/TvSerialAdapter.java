@@ -15,57 +15,58 @@ import com.example.app_1.models.TvSerials;
 
 import java.util.List;
 
-public class TvSerialAdapter extends RecyclerView.Adapter<TvSerialAdapter.TvSerialViewHolder> {
+public class TvSerialAdapter extends RecyclerView.Adapter<TvSerialAdapter.TvSerialsViewHolder> {
 
-    private List<TvSerials> tvSerialsList;
+    private List<TvSerials> mTvSerialsList;
     private Context context;
-    private TvSerialsListener tvSerialsListener;
+    private TvSerialsListener mTvSerialsListener;
 
-    private LayoutInflater layoutInflater;
+    private LayoutInflater mLayoutInflater;
 
-    public TvSerialAdapter(Context context, List<TvSerials> tvSerialsList, TvSerialsListener tvSerialsListener) {
-        this.tvSerialsListener = tvSerialsListener;
+    public TvSerialAdapter(Context context, List<TvSerials> mTvSerialsList,
+                           TvSerialsListener mTvSerialsListener) {
+        this.mTvSerialsListener = mTvSerialsListener;
         this.context = context;
-        this.tvSerialsList = tvSerialsList;
+        this.mTvSerialsList = mTvSerialsList;
     }
 
 
 
     @NonNull
     @Override
-    public TvSerialViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if (layoutInflater == null) {
-            layoutInflater = LayoutInflater.from(context);
+    public TvSerialsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        if (mLayoutInflater == null) {
+            mLayoutInflater = LayoutInflater.from(context);
         }
         ItemContainerTvSerialsBinding tvSerialsBinding = DataBindingUtil.inflate(
-                layoutInflater, R.layout.item_container_tv_serials, parent, false
+                mLayoutInflater, R.layout.item_container_tv_serials, parent, false
         );
-        return new TvSerialViewHolder(tvSerialsBinding);
+        return new TvSerialsViewHolder(tvSerialsBinding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TvSerialViewHolder holder, int position) {
-        holder.bindTvSerials(tvSerialsList.get(position));
+    public void onBindViewHolder(@NonNull TvSerialsViewHolder holder, int position) {
+        holder.bindTvSerials(mTvSerialsList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return tvSerialsList.size();
+        return mTvSerialsList.size();
     }
 
-    class TvSerialViewHolder extends RecyclerView.ViewHolder {
+    class TvSerialsViewHolder extends RecyclerView.ViewHolder {
 
-        private ItemContainerTvSerialsBinding itemContainerTvSerialsBinding;
+        private ItemContainerTvSerialsBinding mItemContainerTvSerialsBinding;
 
-        public TvSerialViewHolder(ItemContainerTvSerialsBinding itemContainerTvSerialsBinding) {
-            super(itemContainerTvSerialsBinding.getRoot());
-            this.itemContainerTvSerialsBinding = itemContainerTvSerialsBinding;
+        public TvSerialsViewHolder(ItemContainerTvSerialsBinding mItemContainerTvSerialsBinding) {
+            super(mItemContainerTvSerialsBinding.getRoot());
+            this.mItemContainerTvSerialsBinding = mItemContainerTvSerialsBinding;
         }
 
         public void bindTvSerials(TvSerials tvSerials) {
-            itemContainerTvSerialsBinding.setTvSerials(tvSerials);
-            itemContainerTvSerialsBinding.executePendingBindings();
-            itemContainerTvSerialsBinding.getRoot().setOnClickListener(v -> tvSerialsListener.onTvSerialClicked(tvSerials));
+            mItemContainerTvSerialsBinding.setTvSerials(tvSerials);
+            mItemContainerTvSerialsBinding.executePendingBindings();
+            mItemContainerTvSerialsBinding.getRoot().setOnClickListener(v -> mTvSerialsListener.onTvSerialClicked(tvSerials));
         }
     }
 }

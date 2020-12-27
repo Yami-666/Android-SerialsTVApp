@@ -26,34 +26,34 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements TvSerialsListener {
 
-    private ActivityMainBinding activityMainBinding;
-    private MostPopularTvSerialsViewModel viewModel;
-    private List<TvSerials> tvSerialsList = new ArrayList<>();
-    private TvSerialAdapter tvSerialAdapter;
-    private static int currentPage = 1;
-    private int totalAvailablePages = 1;
+    private ActivityMainBinding mActivityMainBinding;
+    private MostPopularTvSerialsViewModel mViewModel;
+    private List<TvSerials> mTvSerialsList = new ArrayList<>();
+    private TvSerialAdapter mTvSerialAdapter;
+    private static int sCurrentPage = 1;
+    private int mTotalAvailablePages = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        doInInitialization();
+        mActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        doInInit();
     }
 
-    private void doInInitialization() {
-        activityMainBinding.tvSerialsRecycleView.setHasFixedSize(true);
-        viewModel =
+    private void doInInit() {
+        mActivityMainBinding.tvSerialsRecycleView.setHasFixedSize(true);
+        mViewModel =
                 new ViewModelProvider(this).get(MostPopularTvSerialsViewModel.class);
-        tvSerialAdapter = new TvSerialAdapter(this, tvSerialsList, this);
-        activityMainBinding.tvSerialsRecycleView.setAdapter(tvSerialAdapter);
-        activityMainBinding.tvSerialsRecycleView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        mTvSerialAdapter = new TvSerialAdapter(this, mTvSerialsList, this);
+        mActivityMainBinding.tvSerialsRecycleView.setAdapter(mTvSerialAdapter);
+        mActivityMainBinding.tvSerialsRecycleView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                if (!activityMainBinding.tvSerialsRecycleView.canScrollVertically(1)) {
-                    if (currentPage < totalAvailablePages) {
-                        currentPage++;
+                if (!mActivityMainBinding.tvSerialsRecycleView.canScrollVertically(1)) {
+                    if (sCurrentPage < mTotalAvailablePages) {
+                        sCurrentPage++;
                         getMostPopularTvSerials();
                     }
                 }
@@ -63,32 +63,32 @@ public class MainActivity extends AppCompatActivity implements TvSerialsListener
     }
 
     private void getMostPopularTvSerials() {
-        toggleLoading(currentPage);
-        viewModel.getMostPopularTvSerials(currentPage).observe(this,
+        toggleLoading(sCurrentPage);
+        mViewModel.getMostPopularTvSerials(sCurrentPage).observe(this,
                 mostPopularTvSerials -> {
-                    toggleLoading(currentPage);
-                    activityMainBinding.setIsLoading(false);
+                    toggleLoading(sCurrentPage);
+                    mActivityMainBinding.setIsLoading(false);
                     if (mostPopularTvSerials != null && mostPopularTvSerials.getTvSerials() != null) {
-                        int oldCount = tvSerialsList.size();
-                        totalAvailablePages = mostPopularTvSerials.getPages();
-                        tvSerialsList.addAll(mostPopularTvSerials.getTvSerials());
-                        tvSerialAdapter.notifyItemRangeInserted(oldCount, tvSerialsList.size());
+                        int oldCount = mTvSerialsList.size();
+                        mTotalAvailablePages = mostPopularTvSerials.getPages();
+                        mTvSerialsList.addAll(mostPopularTvSerials.getTvSerials());
+                        mTvSerialAdapter.notifyItemRangeInserted(oldCount, mTvSerialsList.size());
                     }
                 });
     }
 
     private void toggleLoading(int currentPage) {
         if(currentPage == 1) {
-            if (activityMainBinding.getIsLoading() != null && activityMainBinding.getIsLoading()) {
-                activityMainBinding.setIsLoading(false);
+            if (mActivityMainBinding.getIsLoading() != null && mActivityMainBinding.getIsLoading()) {
+                mActivityMainBinding.setIsLoading(false);
             } else {
-                activityMainBinding.setIsLoading(true);
+                mActivityMainBinding.setIsLoading(true);
             }
         } else {
-            if (activityMainBinding.getIsLoadingMore() != null && activityMainBinding.getIsLoadingMore()) {
-                activityMainBinding.setIsLoadingMore(false);
+            if (mActivityMainBinding.getIsLoadingMore() != null && mActivityMainBinding.getIsLoadingMore()) {
+                mActivityMainBinding.setIsLoadingMore(false);
             } else {
-                activityMainBinding.setIsLoadingMore(true);
+                mActivityMainBinding.setIsLoadingMore(true);
             }
         }
     }
