@@ -24,15 +24,15 @@
         android:layout_height="21dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/ic_profile"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextUsername"
-        app:layout_constraintEnd_toStartOf="@+id/editTextUsername"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextSignUpLogin"
+        app:layout_constraintEnd_toStartOf="@+id/editTextSignUpLogin"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@+id/icLock"
-        app:layout_constraintTop_toTopOf="@+id/editTextUsername" />
+        app:layout_constraintTop_toTopOf="@+id/editTextSignUpLogin" />
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/editTextSignUpLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -42,7 +42,7 @@
         android:textColor="@color/colorSecondary"
         android:textColorHint="@color/colorTextSecondary"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextSignUpPassword"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/icProfile"
         app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
@@ -54,14 +54,14 @@
         android:layout_height="23dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/ic_email"
-        app:layout_constraintBottom_toBottomOf="@+id/editEmail"
-        app:layout_constraintEnd_toStartOf="@+id/editEmail"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextSignUpEmail"
+        app:layout_constraintEnd_toStartOf="@+id/editTextSignUpEmail"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/icLock"
-        app:layout_constraintTop_toTopOf="@+id/editEmail" />
+        app:layout_constraintTop_toTopOf="@+id/editTextSignUpEmail" />
 
     <EditText
-        android:id="@+id/editEmail"
+        android:id="@+id/editTextSignUpEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -72,10 +72,10 @@
         android:textColor="@color/colorSecondary"
         android:textColorHint="@color/colorTextSecondary"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextSignUpPassword"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/icEmail"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpLogin" />
 
     <ImageView
         android:id="@+id/icLock"
@@ -83,15 +83,15 @@
         android:layout_height="21dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/ic_padlock"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextPassword"
-        app:layout_constraintEnd_toStartOf="@+id/editTextPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextSignUpPassword"
+        app:layout_constraintEnd_toStartOf="@+id/editTextSignUpPassword"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toTopOf="@+id/editTextSignUpPassword" />
 
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editTextSignUpPassword"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -104,7 +104,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/icLock"
-        app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpEmail" />
 
     <Button
         android:id="@+id/btnSignUp"
@@ -118,9 +118,9 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textDontHaveAnyAccount"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextSignUpPassword"
         app:layout_constraintStart_toStartOf="@+id/icLock"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpPassword"
         app:layout_constraintVertical_bias="0.81"
         app:layout_constraintVertical_chainStyle="packed" />
 
@@ -154,5 +154,16 @@
         app:layout_constraintStart_toEndOf="@+id/textDontHaveAnyAccount"
         app:layout_constraintTop_toTopOf="@+id/textDontHaveAnyAccount"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ProgressBar
+        android:id="@+id/progressBarSignUp"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpPassword"
+        app:layout_constraintVertical_bias="0.75" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

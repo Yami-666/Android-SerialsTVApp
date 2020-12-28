@@ -24,24 +24,24 @@
         android:layout_height="21dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/ic_profile"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextUsername"
-        app:layout_constraintEnd_toStartOf="@+id/editTextUsername"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextSignInLogin"
+        app:layout_constraintEnd_toStartOf="@+id/editTextSignInLogin"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@+id/icLock"
-        app:layout_constraintTop_toTopOf="@+id/editTextUsername" />
+        app:layout_constraintTop_toTopOf="@+id/editTextSignInLogin" />
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/editTextSignInLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="@font/roboto_medium"
-        android:hint="Username"
+        android:hint="Email"
         android:inputType="text"
         android:textColorHint="@color/colorTextSecondary"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextSignInPassword"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/icProfile"
         app:layout_constraintTop_toBottomOf="@+id/imageLogo"
@@ -53,14 +53,14 @@
         android:layout_height="21dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/ic_padlock"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextPassword"
-        app:layout_constraintEnd_toStartOf="@+id/editTextPassword"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextSignInPassword"
+        app:layout_constraintEnd_toStartOf="@+id/editTextSignInPassword"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toTopOf="@+id/editTextSignInPassword" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editTextSignInPassword"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_16sdp"
@@ -73,7 +73,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/icLock"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignInLogin"
         android:textColor="@color/colorSecondary"/>
 
     <TextView
@@ -86,10 +86,10 @@
         android:text="Forgot password?"
         android:textColor="@color/colorTextSecondary"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextSignInPassword"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignInPassword" />
 
     <Button
         android:id="@+id/btnSignIn"
@@ -102,7 +102,7 @@
         android:textColor="@color/white"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/textOrContinueWith"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextSignInPassword"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/icLock"
         app:layout_constraintTop_toBottomOf="@+id/textForgotPassword"
@@ -171,4 +171,13 @@
         app:layout_constraintTop_toTopOf="@+id/textDontHaveAnyAccount"
         app:layout_constraintVertical_bias="0.0" />
 
+    <ProgressBar
+        android:id="@+id/progressBarSignIn"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textForgotPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>

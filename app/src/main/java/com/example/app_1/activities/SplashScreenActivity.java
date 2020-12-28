@@ -12,20 +12,17 @@ import com.example.app_1.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private final static int SPLASH_SCREEN_TIMEOUT = 3000;
+    private final static int SPLASH_SCREEN_TIMEOUT = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(SplashScreenActivity.this, SignInActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            Intent intent = new Intent(SplashScreenActivity.this, SignInActivity.class);
+            startActivity(intent);
+            finish();
         }, SPLASH_SCREEN_TIMEOUT);
     }
 }
