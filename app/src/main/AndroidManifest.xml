@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_1"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activities.SignUpActivity"></activity>
+        <activity android:name=".activities.SignInActivity" />
         <activity android:name=".activities.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.TvSerialsDetailsActivity" />
-        <activity android:name=".activities.MainActivity"/>
+        <activity android:name=".activities.MainActivity" />
     </application>
 
 </manifest>
