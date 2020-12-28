@@ -1,90 +1,68 @@
 package com.example.app_1.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PatternMatcher;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import com.example.app_1.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import com.example.app_1.databinding.FragmentSignInBinding;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class SignInActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-
-    private EditText editTextEmail;
-    private EditText editTextPassword;
-    private Button btnSignIn;
-    private TextView textSignUp;
-    private ProgressBar progressBar;
+    private FragmentSignInBinding mFragmentSignInBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_sign_in);
+        mFragmentSignInBinding = DataBindingUtil.setContentView(this, R.layout.fragment_sign_in);
 
         mAuth = FirebaseAuth.getInstance();
 
-        editTextEmail = findViewById(R.id.editTextSignInLogin);
-        editTextPassword = findViewById(R.id.editTextSignInPassword);
-
-        progressBar = findViewById(R.id.progressBarSignIn);
-
-        // Move to registration screen
-        textSignUp = findViewById(R.id.textSignUp);
-        textSignUp.setOnClickListener(v -> {
+        mFragmentSignInBinding.textSignUp.setOnClickListener(v -> {
             Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
             startActivity(intent);
         });
 
-        btnSignIn = findViewById(R.id.btnSignIn);
-        btnSignIn.setOnClickListener(v -> userLogin());
+        mFragmentSignInBinding.btnSignIn.setOnClickListener(v -> userLogin());
     }
 
     private void userLogin() {
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
+        String email = mFragmentSignInBinding.editTextSignInLogin.getText().toString().trim();
+        String password = mFragmentSignInBinding.editTextSignInPassword.getText().toString().trim();
 
         if (email.isEmpty()) {
-            editTextEmail.setError("Email is required!");
-            editTextEmail.requestFocus();
+            mFragmentSignInBinding.editTextSignInLogin.setError("Email is required!");
+            mFragmentSignInBinding.editTextSignInLogin.requestFocus();
             return;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            editTextEmail.setError("Please enter a valid email!");
-            editTextEmail.requestFocus();
+            mFragmentSignInBinding.editTextSignInLogin.setError("Please enter a valid email!");
+            mFragmentSignInBinding.editTextSignInLogin.requestFocus();
             return;
         }
         if (password.isEmpty()) {
-            editTextPassword.setError("Password is required!");
-            editTextPassword.requestFocus();
+            mFragmentSignInBinding.editTextSignInPassword.setError("Password is required!");
+            mFragmentSignInBinding.editTextSignInPassword.requestFocus();
             return;
         }
 
-        progressBar.setVisibility(View.VISIBLE);
+        mFragmentSignInBinding.progressBarSignIn.setVisibility(View.VISIBLE);
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                progressBar.setVisibility(View.GONE);
+                mFragmentSignInBinding.progressBarSignIn.setVisibility(View.GONE);
                 //redirect to main activity
                 Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                 startActivity(intent);
             } else {
-                progressBar.setVisibility(View.GONE);
+                mFragmentSignInBinding.progressBarSignIn.setVisibility(View.GONE);
                 Toast.makeText(SignInActivity.this, "Failed to login! Try again later!",
                         Toast.LENGTH_SHORT).show();
             }

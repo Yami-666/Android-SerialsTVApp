@@ -1,188 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/imageLogo"
-        android:layout_width="236dp"
-        android:layout_height="226dp"
-        android:layout_marginTop="@dimen/_16sdp"
-        android:background="@drawable/ic_comedy_and_tragedy_masks_couple"
-        android:backgroundTint="@color/colorSecondary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/logo" />
+    <data>
 
-    <ImageView
-        android:id="@+id/icProfile"
-        android:layout_width="21dp"
-        android:layout_height="21dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/ic_profile"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextSignInLogin"
-        app:layout_constraintEnd_toStartOf="@+id/editTextSignInLogin"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@+id/icLock"
-        app:layout_constraintTop_toTopOf="@+id/editTextSignInLogin"
-        android:contentDescription="@string/ic_profile" />
+    </data>
 
-    <EditText
-        android:id="@+id/editTextSignInLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:fontFamily="@font/roboto_medium"
-        android:hint="@string/emai"
-        android:inputType="text"
-        android:textColorHint="@color/colorTextSecondary"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextSignInPassword"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/icProfile"
-        app:layout_constraintTop_toBottomOf="@+id/imageLogo"
-        android:textColor="@color/colorSecondary"
-        android:importantForAutofill="no" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
 
-    <ImageView
-        android:id="@+id/icLock"
-        android:layout_width="21dp"
-        android:layout_height="21dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/ic_padlock"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextSignInPassword"
-        app:layout_constraintEnd_toStartOf="@+id/editTextSignInPassword"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextSignInPassword"
-        android:contentDescription="@string/ic_lock" />
+        <ImageView
+            android:id="@+id/imageLogo"
+            android:layout_width="236dp"
+            android:layout_height="226dp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/ic_comedy_and_tragedy_masks_couple"
+            android:backgroundTint="@color/colorSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/logo" />
 
-    <EditText
-        android:id="@+id/editTextSignInPassword"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_16sdp"
-        android:drawableEnd="@drawable/ic_visibility"
-        android:ems="10"
-        android:fontFamily="@font/roboto_medium"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:textColorHint="@color/colorTextSecondary"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/icLock"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSignInLogin"
-        android:textColor="@color/colorSecondary"
-        android:importantForAutofill="no" />
+        <ImageView
+            android:id="@+id/icProfile"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_profile"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextSignInLogin"
+            app:layout_constraintEnd_toStartOf="@+id/editTextSignInLogin"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/icLock"
+            app:layout_constraintTop_toTopOf="@+id/editTextSignInLogin"
+            android:contentDescription="@string/ic_profile" />
 
-    <TextView
-        android:id="@+id/textForgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_16sdp"
-        android:clickable="true"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/forgot_password"
-        android:textColor="@color/colorTextSecondary"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextSignInPassword"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSignInPassword"
-        android:focusable="true" />
+        <EditText
+            android:id="@+id/editTextSignInLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="@string/emai"
+            android:inputType="text"
+            android:textColorHint="@color/colorTextSecondary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/editTextSignInPassword"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/icProfile"
+            app:layout_constraintTop_toBottomOf="@+id/imageLogo"
+            android:textColor="@color/colorSecondary"
+            android:importantForAutofill="no" />
 
-    <Button
-        android:id="@+id/btnSignIn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/btn_bg"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/sign_in"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/textOrContinueWith"
-        app:layout_constraintEnd_toEndOf="@+id/editTextSignInPassword"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/icLock"
-        app:layout_constraintTop_toBottomOf="@+id/textForgotPassword"
-        app:layout_constraintVertical_bias="0.75"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <ImageView
+            android:id="@+id/icLock"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/ic_padlock"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextSignInPassword"
+            app:layout_constraintEnd_toStartOf="@+id/editTextSignInPassword"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editTextSignInPassword"
+            android:contentDescription="@string/ic_lock" />
 
-    <TextView
-        android:id="@+id/textOrContinueWith"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/or_continue_with"
-        android:textColor="@color/colorTextSecondary"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignInWithGoogle"
-        app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/btnSignIn"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
+        <EditText
+            android:id="@+id/editTextSignInPassword"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:drawableEnd="@drawable/ic_visibility"
+            android:ems="10"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textColorHint="@color/colorTextSecondary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/icLock"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSignInLogin"
+            android:textColor="@color/colorSecondary"
+            android:importantForAutofill="no" />
 
-    <Button
-        android:id="@+id/btnSignInWithGoogle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:background="@drawable/btn_google_bg"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/google"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textDontHaveAnyAccount"
-        app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/btnSignIn"
-        app:layout_constraintTop_toBottomOf="@+id/textOrContinueWith" />
+        <TextView
+            android:id="@+id/textForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:clickable="true"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/forgot_password"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/editTextSignInPassword"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSignInPassword"
+            android:focusable="true" />
 
-    <TextView
-        android:id="@+id/textDontHaveAnyAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/don_t_have_any_account"
-        android:textColor="@color/colorTextSecondary"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textSignUp"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@+id/btnSignInWithGoogle"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignInWithGoogle" />
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/sign_in"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/textOrContinueWith"
+            app:layout_constraintEnd_toEndOf="@+id/editTextSignInPassword"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/icLock"
+            app:layout_constraintTop_toBottomOf="@+id/textForgotPassword"
+            app:layout_constraintVertical_bias="0.75"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <TextView
-        android:id="@+id/textSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/sign_up"
-        android:textColor="@color/colorSecondary"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textDontHaveAnyAccount"
-        app:layout_constraintEnd_toEndOf="@+id/btnSignInWithGoogle"
-        app:layout_constraintStart_toEndOf="@+id/textDontHaveAnyAccount"
-        app:layout_constraintTop_toTopOf="@+id/textDontHaveAnyAccount"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/textOrContinueWith"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/or_continue_with"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnSignInWithGoogle"
+            app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/btnSignIn"
+            app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
 
-    <ProgressBar
-        android:id="@+id/progressBarSignIn"
-        android:layout_width="@dimen/_25sdp"
-        android:layout_height="@dimen/_25sdp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textForgotPassword" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnSignInWithGoogle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/btn_google_bg"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/google"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textDontHaveAnyAccount"
+            app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/btnSignIn"
+            app:layout_constraintTop_toBottomOf="@+id/textOrContinueWith" />
+
+        <TextView
+            android:id="@+id/textDontHaveAnyAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/don_t_have_any_account"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textSignUp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/btnSignInWithGoogle"
+            app:layout_constraintTop_toBottomOf="@+id/btnSignInWithGoogle" />
+
+        <TextView
+            android:id="@+id/textSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/sign_up"
+            android:textColor="@color/colorSecondary"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textDontHaveAnyAccount"
+            app:layout_constraintEnd_toEndOf="@+id/btnSignInWithGoogle"
+            app:layout_constraintStart_toEndOf="@+id/textDontHaveAnyAccount"
+            app:layout_constraintTop_toTopOf="@+id/textDontHaveAnyAccount"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ProgressBar
+            android:id="@+id/progressBarSignIn"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textForgotPassword" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
