@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark">
@@ -16,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/logo" />
 
     <ImageView
         android:id="@+id/icProfile"
@@ -29,7 +29,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@+id/icLock"
-        app:layout_constraintTop_toTopOf="@+id/editTextSignUpLogin" />
+        app:layout_constraintTop_toTopOf="@+id/editTextSignUpLogin"
+        android:contentDescription="@string/ic_profile" />
 
     <EditText
         android:id="@+id/editTextSignUpLogin"
@@ -37,7 +38,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="@font/roboto_medium"
-        android:hint="Username"
+        android:hint="@string/username"
         android:inputType="text"
         android:textColor="@color/colorSecondary"
         android:textColorHint="@color/colorTextSecondary"
@@ -45,7 +46,8 @@
         app:layout_constraintEnd_toEndOf="@+id/editTextSignUpPassword"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/icProfile"
-        app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/imageLogo"
+        android:importantForAutofill="no" />
 
 
     <ImageView
@@ -58,7 +60,8 @@
         app:layout_constraintEnd_toStartOf="@+id/editTextSignUpEmail"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/icLock"
-        app:layout_constraintTop_toTopOf="@+id/editTextSignUpEmail" />
+        app:layout_constraintTop_toTopOf="@+id/editTextSignUpEmail"
+        android:contentDescription="@string/ic_email" />
 
     <EditText
         android:id="@+id/editTextSignUpEmail"
@@ -67,15 +70,16 @@
         android:layout_marginTop="24dp"
         android:ems="10"
         android:fontFamily="@font/roboto_medium"
-        android:hint="Email"
-        android:inputType="text"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
         android:textColor="@color/colorSecondary"
         android:textColorHint="@color/colorTextSecondary"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/editTextSignUpPassword"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/icEmail"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpLogin"
+        android:importantForAutofill="no" />
 
     <ImageView
         android:id="@+id/icLock"
@@ -87,7 +91,8 @@
         app:layout_constraintEnd_toStartOf="@+id/editTextSignUpPassword"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextSignUpPassword" />
+        app:layout_constraintTop_toTopOf="@+id/editTextSignUpPassword"
+        android:contentDescription="@string/ic_lock" />
 
 
     <EditText
@@ -97,14 +102,15 @@
         android:layout_marginTop="24dp"
         android:ems="10"
         android:fontFamily="@font/roboto_medium"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textColor="@color/colorSecondary"
         android:textColorHint="@color/colorTextSecondary"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/icLock"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpEmail"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/btnSignUp"
@@ -113,7 +119,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/btn_bg"
         android:fontFamily="@font/roboto_medium"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -129,7 +135,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_medium"
-        android:text="I have already account."
+        android:text="@string/i_already_have_account"
         android:textColor="@color/colorTextSecondary"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -145,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/roboto_medium"
-        android:text="Sign In"
+        android:text="@string/sign_in"
         android:textColor="@color/colorSecondary"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/textDontHaveAnyAccount"
