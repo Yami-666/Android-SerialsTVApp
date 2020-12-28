@@ -9,6 +9,7 @@ import android.os.PatternMatcher;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -83,6 +84,7 @@ public class SignInActivity extends AppCompatActivity {
                 Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                 startActivity(intent);
             } else {
+                progressBar.setVisibility(View.GONE);
                 Toast.makeText(SignInActivity.this, "Failed to login! Try again later!",
                         Toast.LENGTH_SHORT).show();
             }
