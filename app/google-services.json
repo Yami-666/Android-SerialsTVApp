@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1029137232467",
+    "firebase_url": "https://movie-app-fb509-default-rtdb.firebaseio.com",
     "project_id": "movie-app-fb509",
     "storage_bucket": "movie-app-fb509.appspot.com"
   },

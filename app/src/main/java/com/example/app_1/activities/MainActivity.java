@@ -20,6 +20,8 @@ import com.example.app_1.models.TvSerials;
 import com.example.app_1.repo.MostPopularTvSerialsRepo;
 import com.example.app_1.responses.TvSerialsResponse;
 import com.example.app_1.viewmodel.MostPopularTvSerialsViewModel;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements TvSerialsListener
     private TvSerialAdapter mTvSerialAdapter;
     private static int sCurrentPage = 1;
     private int mTotalAvailablePages = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
