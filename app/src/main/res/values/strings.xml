@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App_1</string>
+    <string name="app_name">MoviesApp</string>
     <string name="tv_serials_most_popular">TV Serials | Most popular</string>
     <string name="read_more">Read more</string>
     <string name="roll_up">roll up</string>
