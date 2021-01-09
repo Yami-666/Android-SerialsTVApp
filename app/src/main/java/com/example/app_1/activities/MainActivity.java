@@ -62,6 +62,9 @@ public class MainActivity extends AppCompatActivity implements TvSerialsListener
                 }
             }
         });
+        mActivityMainBinding.imageSearch.setOnClickListener(v -> {
+            startActivity(new Intent(getApplicationContext(), SearchSerialsActivity.class));
+        });
         getMostPopularTvSerials();
     }
 
@@ -81,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements TvSerialsListener
     }
 
     private void toggleLoading(int currentPage) {
-        if(currentPage == 1) {
+        if (currentPage == 1) {
             if (mActivityMainBinding.getIsLoading() != null && mActivityMainBinding.getIsLoading()) {
                 mActivityMainBinding.setIsLoading(false);
             } else {

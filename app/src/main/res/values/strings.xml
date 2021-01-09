@@ -23,4 +23,6 @@
     <string name="password">Password</string>
     <string name="i_already_have_account">I already have account.</string>
     <string name="sign_in">Sign In</string>
+    <string name="search_tv_serials">Search TV Serials</string>
+    <string name="ic_arrow_back">ic_arrow_back</string>
 </resources>

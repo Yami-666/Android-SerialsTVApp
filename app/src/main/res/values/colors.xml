@@ -9,7 +9,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorTextPrimary">#FFFFFFFF</color>
-    <color name="colorTextSecondary">#b0bec5</color>
+    <color name="colorTextSecondary">#99b0bec5</color>
     <color name="colorTextExtra">#F44336</color>
     <color name="colorTextOther">#4CAF50</color>
 </resources>
